@@ -1,0 +1,160 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #444;
+    transition: background-color 0.5s ease;
+  }
+  
+  /* Container for the Form */
+  .container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    width: 450px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease;
+    transition: transform 0.3s;
+  }
+  
+  .container:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Fade-in animation for the form */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Heading Style */
+  h1 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  
+  /* Label Style */
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  /* Textarea and Input Fields */
+  textarea, input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    background-color: #f1f3f4;
+    outline: none;
+    transition: border-color 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  textarea:focus, input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Result Feedback Styling */
+  #result {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Icon before the alert and success messages */
+  .alert, .success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .alert {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert::before {
+    content: '⚠️';
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  .success::before {
+    content: '✅';
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  /* Footer styling for additional flair */
+  footer {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    width: 100%;
+  }
+  
+  footer a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

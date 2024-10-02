@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piracy Detector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Piracy Detector</h1>
+    
+    <form id="searchForm">
+      <label for="content">Content:</label>
+      <textarea id="content" rows="6" placeholder="Enter the text or content here..." required></textarea>
+
+      <label for="keyword">Keyword:</label>
+      <input type="text" id="keyword" placeholder="Enter keyword" required>
+
+      <button type="submit">Check for Piracy</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    Developed by <a href="#">Your Name</a>
+  </footer>
+
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const content = document.getElementById('content').value;
+      const keyword = document.getElementById('keyword').value;
+
+      const response = await fetch('/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content, keyword })
+      });
+
+      const result = await response.json();
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = '';
+
+      if (result.message.includes('Potential piracy')) {
+        resultDiv.innerHTML = `<div class="alert">${result.message}</div>`;
+      } else {
+        resultDiv.innerHTML = `<div class="success">${result.message}</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
